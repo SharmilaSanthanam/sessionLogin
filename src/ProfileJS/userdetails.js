@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
-import UserUpdate from "./userUpdate";
 import { useParams } from "react-router-dom";
-
 import UserHome from "./userhome";
 
 export default function UserDetails({data}) {
