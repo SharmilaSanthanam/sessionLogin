@@ -14,7 +14,7 @@ export default function UserHome({ userData }) {
   // };
 
   const logOut = () => {
-    axios.get(`http://localhost:5000/api/logout`)
+    axios.get(`https://sessionlogin.onrender.com/api/logout`)
       .then(result => {
         localStorage.removeItem('loggedIn');
         window.location.href = "/";
