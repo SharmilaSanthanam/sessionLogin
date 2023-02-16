@@ -10,7 +10,7 @@ export default function UserDetails({data}) {
   const { _id } = useParams();
 
   useEffect(() => {
-    fetch(`http://localhost:5000/api/${_id}`, {
+    fetch(`https://sessionlogin.onrender.com/api/${_id}`, {
       method: "GET",
       crossDomain: true,
       headers: {
