@@ -4,8 +4,9 @@ import axios from "../axios";
 export default function Home() {
  
   const logOut = (event) => {
-    axios.get(`http://localhost:5000/api/logout`)
-      .then(result => {
+//     axios.get(`http://localhost:5000/api/logout`)
+   axios.get(`https://sessionlogin.onrender.com/api/logout`)
+          .then(result => {
         window.sessionStorage.clear();
         window.localStorage.clear();
         window.location.href = "/";
