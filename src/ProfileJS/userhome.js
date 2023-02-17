@@ -13,7 +13,7 @@ export default function UserHome({ userData }) {
   //       window.location.href = "./user-update";
   // };
 
-  const logOut = () => {
+  const logOut = (event) => {
     axios.get(`http://localhost:5000/api/logout`)
       .then(result => {
         window.sessionStorage.clear();
@@ -22,6 +22,7 @@ export default function UserHome({ userData }) {
        
       })
     }
+window.addEventListener("storage", logOut);
 
     return (
       <div className="auth-wrapper">
