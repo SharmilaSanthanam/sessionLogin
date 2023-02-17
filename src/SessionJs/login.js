@@ -12,7 +12,8 @@ export default function Login() {
       e.preventDefault();
 
       console.log(email, password);
-      fetch(`http://localhost:5000/api/login`, {
+//       fetch(`http://localhost:5000/api/login`, {
+      fetch(`https://sessionlogin.onrender.com/api/login`, {
         method: "POST",
         crossDomain: true,
         headers: {
