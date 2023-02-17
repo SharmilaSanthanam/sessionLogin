@@ -10,7 +10,7 @@ import UserDetails from "./ProfileJS/userdetails";
 function App() {
   const isLoggedIn = window.localStorage.getItem("loggedIn");
   return (
-
+<Router>
       <div className="App">
         <Routes>
           <Route
@@ -20,9 +20,10 @@ function App() {
           />
           <Route path="/sign-in" element={<Login />} />
           <Route path="/sign-up" element={<SignUp />} />
+          <Route path="/userDetails" element={<UserDetails />} />
         </Routes>
       </div>
- 
+      </Router>
   )
 }
 
