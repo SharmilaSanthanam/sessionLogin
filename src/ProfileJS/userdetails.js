@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+
 import UserHome from "./userhome";
 
 export default function UserDetails({data}) {
@@ -8,7 +9,7 @@ export default function UserDetails({data}) {
   const { _id } = useParams();
 
   useEffect(() => {
-    fetch(`https://sessionlogin.onrender.com/api/${_id}`, {
+    fetch(`http://localhost:5000/api/${_id}`, {
       method: "GET",
       crossDomain: true,
       headers: {

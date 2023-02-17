@@ -14,10 +14,12 @@ export default function UserHome({ userData }) {
   // };
 
   const logOut = () => {
-    axios.get(`https://sessionlogin.onrender.com/api/logout`)
+    axios.get(`http://localhost:5000/api/logout`)
       .then(result => {
-        localStorage.removeItem('loggedIn');
+        window.sessionStorage.clear();
+        window.localStorage.clear();
         window.location.href = "/";
+       
       })
     }
 

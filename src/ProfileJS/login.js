@@ -14,8 +14,8 @@ export default function Login() {
       e.preventDefault();
 
       console.log(email, password);
-     
-      fetch(`https://sessionlogin.onrender.com/api/login`, {
+      // fetch(`https://interntask-profile.onrender.com/login-user`, {
+      fetch(`http://localhost:5000/api/login`, {
         method: "POST",
         crossDomain: true,
         headers: {
@@ -40,19 +40,34 @@ export default function Login() {
             // window.localStorage.setItem("token", data.data);
             // window.localStorage.setItem("loggedIn", true);
 
-            sessionStorage.setItem("sessionId", data.userSession.id);
-            sessionStorage.setItem("userId", data.user._id);
+            window.sessionStorage.setItem("sessionId", data.userSession.id);
+window.sessionStorage.setItem("loggedIn", true)
+            // sessionStorage.setItem("userId", data.user._id);
+// const sessiondata = window.sessionStorage.getItem("sessionId");
+const sessiondata = window.sessionStorage.getItem("loggedId");
 
-            localStorage.setItem("sessionId", data.userSession.id);
+            window.localStorage.setItem("sessionId", data.userSession.id);
+            // const localdata = window.localStorage.getItem("sessionId");
             window.localStorage.setItem("loggedIn", true);
+            const localdata = window.localStorage.getItem("loggedId");
+            
 
-            if (localStorage.getItem(data.userSession.id) && localStorage.getItem(true)) {
+            // if ('sessiondata' === 'localdata') {
               // navigate("http:localhost:3000/userDetails/" + `${data.user._id}`)
-              // window.location.href = "/userDetails";
-            }
-            else {
-              window.location.href = "/";
-            }
+              window.location.href = "/userDetails";
+            // }
+            // else if ('localdata' !== null && 'sessiondata' === null) {
+            //   window.sessionStorage.setItem("loggedIn", true);
+            //   window.location.href = "/userDetails";
+            // }
+            // else if ('localdata' === null && 'sessiondata' !== null){
+            //   window.sessionStorage.clear();
+            //   window.location.href = "/";
+            // }
+            // else{
+
+            // }
+            
 
           } else {
             alert("Please enter correct details", `${data}`);
@@ -61,6 +76,7 @@ export default function Login() {
     }
   }
 
+ 
   return (
     <div className="auth-wrapper">
       <div className="auth-inner">
