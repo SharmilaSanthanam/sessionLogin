@@ -13,8 +13,8 @@ export default function SignUp() {
       e.preventDefault();
 
       console.log(name, email, password, cpassword);
-      // fetch(`https://interntask-profile.onrender.com/register`, {
-      fetch(`http://localhost:5000/api/register`, {
+//           fetch(`http://localhost:5000/api/register`, {
+        fetch(`https://sessionlogin.onrender.com/api/register`, {
         method: "POST",
         crossDomain: true,
         headers: {
